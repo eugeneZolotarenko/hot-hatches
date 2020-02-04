@@ -1,11 +1,11 @@
 import React from 'react'
 
+import MainHeader from '../../components/MainHeader'
+
 const Main = () => {
     return (
-        <div>
-            <p>AAAAAAAAAAAAAAAAAAAAAAAAA</p>
-        </div>
+        <MainHeader/>
     )
 }
 
-export default Main
+export default Main;
