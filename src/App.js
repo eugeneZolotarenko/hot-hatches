@@ -4,21 +4,22 @@ import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import Router from './Router';
 
 const theme = {
-  grey: "#C1C4C3",
-  olive: "#8BA390",
-  bigRadius: "30px",
-  smallRadius: "10px",
-  maxWidth: "1210px",
+  yellow: "#F3B81D",
+  orange: "#CF7207",
+  nightBlue: "#0F2934",
+  standartOpacity: "0.3",
 };
 
 const GlobalStyle = createGlobalStyle`
+
   html {
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     box-sizing: border-box;
     font-size: 10px;
     min-width: 320px;
   };
   *, *:before, *:after{
+    font-family: 'Montserrat';
     box-sizing: border-box;
   };
   body {
