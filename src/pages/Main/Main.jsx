@@ -1,10 +1,13 @@
 import React from 'react'
 
-import MainHeader from '../../components/MainHeader'
+import MainHeader from '../../components/MainHeader';
+import MainStyle from './MainStyle';
 
 const Main = () => {
     return (
-        <MainHeader/>
+        <MainStyle>
+            <MainHeader/>
+        </MainStyle>
     )
 }
 
