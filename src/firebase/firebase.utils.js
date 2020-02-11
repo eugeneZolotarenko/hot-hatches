@@ -14,4 +14,11 @@ const config = {
 
 firebase.initializeApp(config);
 
-export const firestore = firebase.firestore();
+const firestore = firebase.firestore();
+
+export async function testFireBase(brand) {
+    const snapshot = await firestore.collection(brand).get();
+    snapshot.docs.forEach(doc => {
+        console.log(doc.data());
+    })
+};
