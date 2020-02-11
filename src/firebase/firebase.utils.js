@@ -16,9 +16,4 @@ firebase.initializeApp(config);
 
 const firestore = firebase.firestore();
 
-export async function testFireBase(brand) {
-    const snapshot = await firestore.collection(brand).get();
-    snapshot.docs.forEach(doc => {
-        console.log(doc.data());
-    })
-};
+export default firestore;
