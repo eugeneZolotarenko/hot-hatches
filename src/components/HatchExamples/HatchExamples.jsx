@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import history from "../../history"
 
 import HatchExamplesStyle from "./HatchExamplesStyle"
 
@@ -8,16 +9,14 @@ const HatchExamples = (props) => {
     const hatchBrand = e.target.textContent
     async function redirectToPage() {
       await props.setBrand(hatchBrand)
-      window.location.search = hatchBrand
+      history.push({ search: hatchBrand, pathname: "/brand" })
     }
     redirectToPage()
   }
   return (
     <HatchExamplesStyle>
       <div>
-        <Link to='/brand' onClick={handleClick}>
-          Audi
-        </Link>
+        <button onClick={handleClick}>Audi</button>
       </div>
     </HatchExamplesStyle>
   )

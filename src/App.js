@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react"
 
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
-import Router from './Router';
+import { ThemeProvider, createGlobalStyle } from "styled-components"
+import IndexRouter from "./IndexRouter"
 
 const theme = {
   yellow: "#F3B81D",
   orange: "#CF7207",
   nightBlue: "#0F2934",
-  standartOpacity: "0.3",
-};
+  standartOpacity: "0.3"
+}
 
 const GlobalStyle = createGlobalStyle`
 
@@ -36,12 +36,12 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
+      <div className='App'>
         <GlobalStyle />
-        <Router/>
+        <IndexRouter />
       </div>
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App

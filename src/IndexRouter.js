@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react"
-import { Switch, Route } from "react-router-dom"
+import { Switch, Router, Route } from "react-router-dom"
+import history from "./history"
 
 import firestore from "./firebase/firebase.utils"
 
-import Main from "./pages/Main"
-import Brand from "./pages/Brand"
+import Main from "./pages/Main/Main"
+import Brand from "./pages/Brand/Brand"
 
-const Router = () => {
+const IndexRouter = () => {
   const [data, setData] = useState([])
   const [modelData, setModelData] = useState()
 
@@ -62,19 +63,22 @@ const Router = () => {
   // if (data.length > 0) {
   return (
     <Switch>
-      <Route
-        exact
-        path='/'
-        render={(props) => (
-          <Main
-            {...props}
-            setBrand={setBrand}
-            setModel={setModel}
-            model={model}
-          />
-        )}
-      />
-      <Route exact path='/brand' component={Brand} />
+      <Router history={history}>
+        <Route
+          exact
+          path='/'
+          render={(props) => (
+            <Main
+              {...props}
+              setBrand={setBrand}
+              setModel={setModel}
+              model={model}
+              brand={brand}
+            />
+          )}
+        />
+        <Route exact path='/brand' component={Brand} />
+      </Router>
     </Switch>
   )
 }
@@ -85,4 +89,4 @@ const Router = () => {
 //   }
 // }
 
-export default Router
+export default IndexRouter
