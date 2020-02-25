@@ -1,13 +1,13 @@
-import React from 'react'
+import React from "react"
 
-import MainHeaderStyle from './MainHeaderStyle'
+import MainHeaderStyle from "./MainHeaderStyle"
 
-const MainHeader = () => {
-    return (
-        <MainHeaderStyle>
-            <p>test</p>
-        </MainHeaderStyle>
-    )
+const MainHeader = (props) => {
+  return (
+    <MainHeaderStyle>
+      <div></div>
+    </MainHeaderStyle>
+  )
 }
 
 export default MainHeader
