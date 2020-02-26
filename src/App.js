@@ -7,6 +7,7 @@ const theme = {
   yellow: "#F3B81D",
   orange: "#CF7207",
   nightBlue: "#0F2934",
+  semiWhite: "#FCFFF3",
   standartOpacity: "0.3"
 }
 
@@ -15,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     font-family: 'Montserrat';
     box-sizing: border-box;
-    font-size: 10px;
+    font-size: 62.5%;
     min-width: 320px;
   };
   *, *:before, *:after{
@@ -25,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     background: #FCFFF3;
   };
   a{
