@@ -1,11 +1,7 @@
 import styled from "styled-components"
 
 const MainHeaderStyle = styled.section`
-  background: linear-gradient(
-    90deg,
-    ${(props) => props.theme.yellow} 50%,
-    ${(props) => props.theme.semiWhite} 50%
-  );
+  background: ${(props) => props.theme.yellowSemiWhite};
   min-height: 150px;
   position: relative;
   padding: 14vh 0 10vh 0;

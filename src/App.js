@@ -8,6 +8,7 @@ const theme = {
   orange: "#CF7207",
   nightBlue: "#0F2934",
   semiWhite: "#FCFFF3",
+  yellowSemiWhite: "linear-gradient(90deg, #F3B81D  50%, #FCFFF3 50%)",
   standartOpacity: "0.3"
 }
 
