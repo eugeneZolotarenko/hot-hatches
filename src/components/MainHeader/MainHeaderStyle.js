@@ -32,6 +32,7 @@ const MainHeaderStyle = styled.section`
     font-size: 6.3rem;
     font-weight: normal;
     width: 50%;
+    max-width: 1000px;
     margin-right: 5%;
     position: relative;
     line-height: 9rem;
