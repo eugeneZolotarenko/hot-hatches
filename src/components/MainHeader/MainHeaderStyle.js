@@ -21,6 +21,11 @@ const MainHeaderStyle = styled.section`
     top: 4%;
     left: 2%;
     margin: 0;
+    @media (max-width: 600px) {
+      width: 40%;
+      font-size: 2.8rem;
+      margin-top: 4vh;
+    }
   }
 
   h2 {
@@ -38,15 +43,54 @@ const MainHeaderStyle = styled.section`
       font-weight: bold;
       position: absolute;
       opacity: 0.3;
-      top: -3rem;
-      left: -5rem;
+      top: -5%;
+      left: -6%;
+      @media (max-width: 1400px) {
+        font-size: 15rem;
+      }
+
+      @media (max-width: 900px) {
+        font-size: 14rem;
+      }
+
+      @media (max-width: 600px) {
+        font-size: 10rem;
+      }
+    }
+
+    @media (max-width: 1400px) {
+      font-size: 5.3rem;
+      line-height: 8rem;
+    }
+    @media (max-width: 900px) {
+      font-size: 4.3rem;
+      line-height: 6rem;
+      margin-right: 2%;
+    }
+
+    @media (max-width: 600px) {
+      margin-top: 8vh;
+      width: 85%;
+      font-size: 3.5rem;
+      line-height: 5rem;
     }
   }
 
   .little-hatch {
     background: url("little-hatch.gif");
+    background-size: cover;
     width: 300px;
     height: 170px;
+
+    @media (max-width: 900px) {
+      width: 220px;
+      height: 120px;
+    }
+    @media (max-width: 600px) {
+      width: 180px;
+      height: 95px;
+      align-self: flex-end;
+    }
   }
 
   &::before {
@@ -57,6 +101,12 @@ const MainHeaderStyle = styled.section`
     position: absolute;
     top: 0;
     right: 0;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column-reverse;
+    padding-top: 4vh;
+    padding-bottom: 6vh;
   }
 `
 
