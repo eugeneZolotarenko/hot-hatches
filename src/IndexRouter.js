@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Switch, Router, Route } from "react-router-dom"
 import history from "./history"
-
-import firestore from "./firebase/firebase.utils"
+import GetFireBaseData from "./components/Helpers/GetFireBaseData"
 
 import Main from "./pages/Main/Main"
 import Brand from "./pages/Brand/Brand"
@@ -16,16 +15,7 @@ const IndexRouter = () => {
 
   useEffect(() => {
     if (brand !== "") {
-      async function listModels(brand) {
-        const snapshot = await firestore.collection(brand).get()
-        const dataArr = []
-        snapshot.docs.forEach((doc) => {
-          const data = doc.data()
-          dataArr.push(data)
-        })
-        setData(dataArr)
-      }
-      listModels(brand)
+      GetFireBaseData(brand, setData)
     }
   }, [brand])
 

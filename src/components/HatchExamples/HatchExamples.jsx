@@ -1,33 +1,20 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import history from "../../history"
-
-import firestore from "../../firebase/firebase.utils"
 
 import HatchExamplesStyle from "./HatchExamplesStyle"
+import GetFireBaseData from "../Helpers/GetFireBaseData"
 
 const HatchExamples = (props) => {
   const [examples, setExamples] = useState([])
   const collection = "Examples"
 
   useEffect(() => {
-    async function getExamples(collection) {
-      const snapshot = await firestore.collection(collection).get()
-      const dataArr = []
-      snapshot.docs.forEach((doc) => {
-        const data = doc.data()
-        dataArr.push(data)
-      })
-      setExamples(dataArr)
-    }
-    getExamples(collection)
+    GetFireBaseData(collection, setExamples)
   }, [])
 
   function handleClick(e) {
     const hatchBrand = e.target.dataset.brand
-    console.log(hatchBrand)
     props.setBrand(hatchBrand)
-    // history.push({ search: hatchBrand, pathname: "/brand" })
   }
 
   return (
