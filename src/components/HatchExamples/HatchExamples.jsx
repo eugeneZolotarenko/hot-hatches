@@ -8,15 +8,6 @@ import HatchExamplesStyle from "./HatchExamplesStyle"
 
 const HatchExamples = (props) => {
   const [examples, setExamples] = useState([])
-  // function handleClick(e) {
-  //   const hatchBrand = e.target.textContent
-  //   async function redirectToPage() {
-  //     await props.setBrand(hatchBrand)
-  //     history.push({ search: hatchBrand, pathname: "/brand" })
-  //   }
-  //   redirectToPage()
-  // }
-
   const collection = "Examples"
 
   useEffect(() => {
@@ -32,24 +23,32 @@ const HatchExamples = (props) => {
     getExamples(collection)
   }, [])
 
-  console.log(examples)
+  function handleClick(e) {
+    const hatchBrand = e.target.dataset.brand
+    console.log(hatchBrand)
+    props.setBrand(hatchBrand)
+    // history.push({ search: hatchBrand, pathname: "/brand" })
+  }
 
   return (
     <HatchExamplesStyle>
       <div>
-        {examples.map((hatch, i) => {
+        {examples.map(({ brand, model }, i) => {
           return (
-            <button
+            <Link
+              onClick={handleClick}
+              to={{
+                search: brand + "/" + model,
+                pathname: "/brand"
+              }}
               key={i}
-              data-brand={hatch.brand}
-              data-model={hatch.model}
               style={{
-                backgroundImage: `url('assets/${hatch.brand}/${hatch.model}.jpg')`
+                backgroundImage: `url('assets/${brand}/${model}.jpg')`
               }}>
-              <span>
-                {hatch.brand} {hatch.model}
+              <span data-brand={brand} data-model={model}>
+                {brand} {model}
               </span>
-            </button>
+            </Link>
           )
         })}
       </div>
