@@ -32,6 +32,8 @@ const HatchExamplesStyle = styled.section`
         justify-content: center;
         z-index: 100;
         transition: 0.4s;
+        padding: 0 5px;
+        text-align: center;
       }
       &::before {
         content: "";
@@ -67,13 +69,27 @@ const HatchExamplesStyle = styled.section`
       @media (max-aspect-ratio: 1/1) {
         height: 15vh;
       }
-      @media (min-aspect-ratio: 1/1) {
+      @media (min-width: 400) {
         min-height: 200px;
       }
     }
     @media (max-width: 900px) {
       grid-template-columns: 1fr 1fr;
       box-shadow: 10px 10px 0px 0px ${(props) => props.theme.nightBlue};
+      a {
+        &:hover {
+          &:nth-child(odd) {
+            &::before {
+              background: ${(props) => props.theme.yellow};
+            }
+          }
+          &:nth-child(even) {
+            &::before {
+              background: white;
+            }
+          }
+        }
+      }
     }
   }
 `

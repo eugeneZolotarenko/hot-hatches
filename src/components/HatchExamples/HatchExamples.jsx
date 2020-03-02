@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 
 import HatchExamplesStyle from "./HatchExamplesStyle"
+
 import GetFireBaseData from "../Helpers/GetFireBaseData"
+import RandomizeIt from "../Helpers/RandomizeIt"
 
 const HatchExamples = (props) => {
   const [examples, setExamples] = useState([])
@@ -20,7 +22,7 @@ const HatchExamples = (props) => {
   return (
     <HatchExamplesStyle>
       <div>
-        {examples.map(({ brand, model }, i) => {
+        {RandomizeIt(examples).map(({ brand, model }, i) => {
           return (
             <Link
               onClick={handleClick}
