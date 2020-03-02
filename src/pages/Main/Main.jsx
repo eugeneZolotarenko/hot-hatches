@@ -9,7 +9,12 @@ const Main = (props) => {
   return (
     <MainStyle>
       <MainHeader />
-      <HatchExamples setBrand={props.setBrand} brand={props.brand} />
+      <HatchExamples
+        setBrand={props.setBrand}
+        setModel={props.setModel}
+        model={props.model}
+        brand={props.brand}
+      />
     </MainStyle>
   )
 }

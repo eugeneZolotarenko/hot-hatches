@@ -12,7 +12,7 @@ const MainHeaderStyle = styled.section`
   .logo {
     color: #cf7207;
     font-size: 4rem;
-    font-weight: bold;
+    font-weight: 800;
     position: absolute;
     top: 4%;
     left: 2%;

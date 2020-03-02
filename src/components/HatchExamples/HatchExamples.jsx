@@ -6,9 +6,9 @@ import GetFireBaseData from "../Helpers/GetFireBaseData"
 
 const HatchExamples = (props) => {
   const [examples, setExamples] = useState([])
-  const collection = "Examples"
 
   useEffect(() => {
+    const collection = "Examples"
     GetFireBaseData(collection, setExamples)
   }, [])
 
@@ -32,7 +32,7 @@ const HatchExamples = (props) => {
               style={{
                 backgroundImage: `url('assets/${brand}/${model}.jpg')`
               }}>
-              <span data-brand={brand} data-model={model}>
+              <span class='brand-model' data-brand={brand} data-model={model}>
                 {brand} {model}
               </span>
             </Link>
