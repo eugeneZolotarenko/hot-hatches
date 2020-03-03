@@ -4,12 +4,13 @@ const HatchExamplesStyle = styled.section`
   background: ${(props) => props.theme.yellowSemiWhite};
   display: flex;
   justify-content: center;
-  padding-bottom: 15vh;
+  padding-bottom: 7vh;
   div {
     width: 90%;
     box-shadow: 15px 15px 0px 0px ${(props) => props.theme.nightBlue};
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    max-width: 2000px;
     a {
       display: block;
       background-repeat: no-repeat;
@@ -34,6 +35,12 @@ const HatchExamplesStyle = styled.section`
         transition: 0.4s;
         padding: 0 5px;
         text-align: center;
+        @media (max-width: 900px) {
+          font-size: 2.8rem;
+        }
+        @media (max-width: 500px) {
+          font-size: 1.8rem;
+        }
       }
       &::before {
         content: "";

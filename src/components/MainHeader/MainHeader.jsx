@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 import MainHeaderStyle from "./MainHeaderStyle"
 
-const MainHeader = (props) => {
+const MainHeader = () => {
   return (
     <MainHeaderStyle>
       <Link to='/' className='logo'>

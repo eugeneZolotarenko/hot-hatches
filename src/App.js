@@ -29,6 +29,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-size: 1.8rem;
     background: #FCFFF3;
+    max-width: 100vw;
   };
   a{
     text-decoration: none;

@@ -34,7 +34,10 @@ const HatchExamples = (props) => {
               style={{
                 backgroundImage: `url('assets/${brand}/${model}.jpg')`
               }}>
-              <span class='brand-model' data-brand={brand} data-model={model}>
+              <span
+                className='brand-model'
+                data-brand={brand}
+                data-model={model}>
                 {brand} {model}
               </span>
             </Link>
