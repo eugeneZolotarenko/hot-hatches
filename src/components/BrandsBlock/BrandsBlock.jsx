@@ -22,21 +22,27 @@ const BrandsBlock = (props) => {
 
   return (
     <BrandsBlockStyle>
-      <div></div>
-      {sortedBrands.map((name, i) => {
-        return (
-          <Link
-            data-brand={name}
-            onClick={handleClick}
-            to={{
-              search: name,
-              pathname: "/brand"
-            }}
-            key={i}>
-            {name}
-          </Link>
-        )
-      })}
+      <div className='header-container'>
+        <h3>
+          <span className='first-letter'>B</span>Brands
+        </h3>
+      </div>
+      <div className='brands-container'>
+        {sortedBrands.map((name, i) => {
+          return (
+            <Link
+              data-brand={name}
+              onClick={handleClick}
+              to={{
+                search: name,
+                pathname: "/brand"
+              }}
+              key={i}>
+              {name}
+            </Link>
+          )
+        })}
+      </div>
     </BrandsBlockStyle>
   )
 }

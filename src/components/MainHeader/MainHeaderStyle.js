@@ -33,28 +33,6 @@ const MainHeaderStyle = styled.section`
     position: relative;
     line-height: 9rem;
 
-    &::before {
-      content: "T";
-      color: ${(props) => props.theme.orange};
-      font-size: 16rem;
-      font-weight: bold;
-      position: absolute;
-      opacity: 0.3;
-      top: -5%;
-      left: -6%;
-      @media (max-width: 1400px) {
-        font-size: 15rem;
-      }
-
-      @media (max-width: 900px) {
-        font-size: 14rem;
-      }
-
-      @media (max-width: 600px) {
-        font-size: 10rem;
-      }
-    }
-
     @media (max-width: 1400px) {
       font-size: 5.3rem;
       line-height: 8rem;
@@ -66,7 +44,7 @@ const MainHeaderStyle = styled.section`
     }
 
     @media (max-width: 600px) {
-      margin-top: 8vh;
+      margin-top: 12vh;
       width: 85%;
       font-size: 3.5rem;
       line-height: 5rem;

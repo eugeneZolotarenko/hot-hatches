@@ -10,6 +10,7 @@ const MainHeader = () => {
         Hot Hatches
       </Link>
       <h2>
+        <span className='first-letter'>T</span>
         That’s small-little cars, which just give you a lot of fun in your daily
         routine
       </h2>

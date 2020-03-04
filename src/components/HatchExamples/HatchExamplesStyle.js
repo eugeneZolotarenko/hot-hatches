@@ -5,6 +5,7 @@ const HatchExamplesStyle = styled.section`
   display: flex;
   justify-content: center;
   padding-bottom: 7vh;
+  margin-top: -2px;
   div {
     width: 90%;
     box-shadow: 15px 15px 0px 0px ${(props) => props.theme.nightBlue};

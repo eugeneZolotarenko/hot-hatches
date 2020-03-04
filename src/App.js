@@ -9,6 +9,7 @@ const theme = {
   nightBlue: "#0F2934",
   semiWhite: "#FCFFF3",
   yellowSemiWhite: "linear-gradient(90deg, #F3B81D  50%, #FCFFF3 50%)",
+  verticalYellowSemiWhite: "linear-gradient(180deg, #F3B81D  50%, #FCFFF3 50%)",
   standartOpacity: "0.3"
 }
 
@@ -34,6 +35,26 @@ const GlobalStyle = createGlobalStyle`
   a{
     text-decoration: none;
   }
+  .first-letter {
+      color: ${(props) => props.theme.orange};
+      font-size: 16rem;
+      font-weight: bold;
+      position: absolute;
+      opacity: 0.3;
+      top: -5%;
+      left: -6%;
+      @media (max-width: 1400px) {
+        font-size: 15rem;
+      }
+
+      @media (max-width: 900px) {
+        font-size: 14rem;
+      }
+
+      @media (max-width: 600px) {
+        font-size: 10rem;
+      }
+    }
 `
 
 function App() {
