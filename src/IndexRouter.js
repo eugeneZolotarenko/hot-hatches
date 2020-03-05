@@ -67,7 +67,19 @@ const IndexRouter = () => {
             />
           )}
         />
-        <Route exact path='/brand' component={Brand} />
+        <Route
+          exact
+          path='/brand'
+          render={(props) => (
+            <Brand
+              {...props}
+              setBrand={setBrand}
+              setModel={setModel}
+              model={model}
+              brand={brand}
+            />
+          )}
+        />
       </Router>
     </Switch>
   )
