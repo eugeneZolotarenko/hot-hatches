@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 import BrandsBlockStyle from "./BrandsBlockStyle"
 
-import GetFireBaseData from "../Helpers/GetFireBaseData"
+import GetFireBaseData from "../../Helpers/GetFireBaseData"
 
 const BrandsBlock = (props) => {
   const [allBrands, setAllBrands] = useState([])

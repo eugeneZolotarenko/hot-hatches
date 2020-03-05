@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 
 import HatchExamplesStyle from "./HatchExamplesStyle"
 
-import GetFireBaseData from "../Helpers/GetFireBaseData"
-import RandomizeIt from "../Helpers/RandomizeIt"
+import GetFireBaseData from "../../Helpers/GetFireBaseData"
+import RandomizeIt from "../../Helpers/RandomizeIt"
 
 const HatchExamples = (props) => {
   const [examples, setExamples] = useState([])

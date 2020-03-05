@@ -1,8 +1,8 @@
 import React from "react"
 
-import MainHeader from "../../components/MainHeader"
-import HatchExamples from "../../components/HatchExamples"
-import BrandsBlock from "../../components/BrandsBlock"
+import MainHeader from "../../components/Main/MainHeader"
+import HatchExamples from "../../components/Main/HatchExamples"
+import BrandsBlock from "../../components/Main/BrandsBlock"
 
 import MainStyle from "./MainStyle"
 
