@@ -1,6 +1,7 @@
 import React from "react"
 
 import BrandHeader from "../../components/Brand/BrandHeader"
+import HatchCard from "../../components/Brand/HatchCard"
 
 import BrandStyle from "./BrandStyle"
 
@@ -12,12 +13,8 @@ const Brand = (props) => {
 
   return (
     <BrandStyle>
-      <BrandHeader
-        setBrand={props.setBrand}
-        setModel={props.setModel}
-        model={props.model}
-        brand={props.brand}
-      />
+      <BrandHeader brand={props.brand} />
+      <HatchCard brandData={props.brandData} />
     </BrandStyle>
   )
 }
