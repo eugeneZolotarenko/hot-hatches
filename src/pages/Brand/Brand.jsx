@@ -14,7 +14,13 @@ const Brand = (props) => {
   return (
     <BrandStyle>
       <BrandHeader brand={props.brand} />
-      <HatchCard brandData={props.brandData} />
+      <HatchCard
+        brandData={props.brandData}
+        setBrand={props.setBrand}
+        setModel={props.setModel}
+        brand={props.brand}
+        model={props.model}
+      />
     </BrandStyle>
   )
 }

@@ -8,7 +8,7 @@ const HatchExamplesStyle = styled.section`
   margin-top: -2px;
   div {
     width: 90%;
-    box-shadow: 15px 15px 0px 0px ${(props) => props.theme.nightBlue};
+    box-shadow: ${(props) => props.theme.cardShadow};
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 2000px;
