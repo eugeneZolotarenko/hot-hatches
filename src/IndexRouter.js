@@ -3,8 +3,9 @@ import { Switch, Router, Route } from "react-router-dom"
 import history from "./history"
 import GetFireBaseData from "./components/Helpers/GetFireBaseData"
 
-import Main from "./pages/Main/Main"
-import Brand from "./pages/Brand/Brand"
+import Main from "./pages/Main"
+import Brand from "./pages/Brand"
+import Model from "./pages/Model"
 
 const IndexRouter = () => {
   const [data, setData] = useState([])
@@ -72,6 +73,20 @@ const IndexRouter = () => {
           path='/brand'
           render={(props) => (
             <Brand
+              {...props}
+              setBrand={setBrand}
+              setModel={setModel}
+              model={model}
+              brand={brand}
+              brandData={data}
+            />
+          )}
+        />
+        <Route
+          exact
+          path='/brand/model'
+          render={(props) => (
+            <Model
               {...props}
               setBrand={setBrand}
               setModel={setModel}

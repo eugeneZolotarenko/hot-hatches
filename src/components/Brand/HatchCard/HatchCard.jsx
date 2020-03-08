@@ -12,7 +12,7 @@ const HatchCard = (props) => {
             key={hatch.name}
             className='card-wrapper'
             to={{
-              search: props.brand + "/" + props.model,
+              search: props.brand + "/" + hatch.id,
               pathname: "/brand"
             }}>
             <div className='tech-part'>
@@ -27,9 +27,8 @@ const HatchCard = (props) => {
             </div>
             <div
               className='img-part'
-              to={{
-                search: props.brand + "/" + props.model,
-                pathname: "/brand"
+              style={{
+                backgroundImage: `url('assets/${props.brand}/${hatch.name}.jpg')`
               }}></div>
           </Link>
         )

@@ -28,7 +28,7 @@ const HatchExamples = (props) => {
               onClick={handleClick}
               to={{
                 search: brand + "/" + model,
-                pathname: "/brand"
+                pathname: "/brand/model"
               }}
               key={i}
               style={{
