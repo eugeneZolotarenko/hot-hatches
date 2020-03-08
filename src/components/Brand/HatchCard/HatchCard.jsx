@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 
 import HatchCardStyle from "./HatchCardStyle"
+import changeLinkSpace from "../../Helpers/changeLinkSpace"
 
 const HatchCard = (props) => {
   return (
@@ -12,8 +13,11 @@ const HatchCard = (props) => {
             key={hatch.name}
             className='card-wrapper'
             to={{
-              search: props.brand + "/" + hatch.id,
-              pathname: "/brand"
+              search:
+                changeLinkSpace(props.brand) +
+                "/" +
+                changeLinkSpace(hatch.name),
+              pathname: "/brand/model"
             }}>
             <div className='tech-part'>
               <ul className='tech-info'>

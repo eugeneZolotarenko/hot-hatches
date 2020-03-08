@@ -5,6 +5,7 @@ import HatchExamplesStyle from "./HatchExamplesStyle"
 
 import GetFireBaseData from "../../Helpers/GetFireBaseData"
 import RandomizeIt from "../../Helpers/RandomizeIt"
+import changeLinkSpace from "../../Helpers/changeLinkSpace"
 
 const HatchExamples = (props) => {
   const [examples, setExamples] = useState([])
@@ -27,7 +28,7 @@ const HatchExamples = (props) => {
             <Link
               onClick={handleClick}
               to={{
-                search: brand + "/" + model,
+                search: changeLinkSpace(brand) + "/" + changeLinkSpace(model),
                 pathname: "/brand/model"
               }}
               key={i}
