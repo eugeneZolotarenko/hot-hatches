@@ -10,7 +10,7 @@ const HatchCard = (props) => {
       {props.brandData.map((hatch) => {
         return (
           <Link
-            key={hatch.name}
+            key={hatch.id}
             className='card-wrapper'
             to={{
               search:
@@ -21,19 +21,29 @@ const HatchCard = (props) => {
             }}>
             <div className='tech-part'>
               <ul className='tech-info'>
-                <li>Max. Speed: 240 km/h</li>
-                <li>0-100 km/h: 5.5 s</li>
-                <li>0-160 km/h: 12.5 s</li>
-                <li>100-0 km/h: 8.5 s</li>
-                <li>Nurburgring: 7:47.19 m</li>
+                <li>
+                  Max. Speed: <strong>240</strong> km/h
+                </li>
+                <li>
+                  0-100 km/h: <strong>5.5</strong> s
+                </li>
+                <li>
+                  0-160 km/h: <strong>12.5</strong> s
+                </li>
+                <li>
+                  100-0 km/h: <strong>8.5</strong> s
+                </li>
+                <li>
+                  Nurburgring: <strong>7:47.19</strong> m
+                </li>
               </ul>
-              <h3>{hatch.name}</h3>
+              <h3 className='hatch-name'>{hatch.name}</h3>
             </div>
-            <div
+            <figure
               className='img-part'
               style={{
                 backgroundImage: `url('assets/${props.brand}/${hatch.name}.jpg')`
-              }}></div>
+              }}></figure>
           </Link>
         )
       })}

@@ -11,7 +11,8 @@ const theme = {
   yellowSemiWhite: "linear-gradient(90deg, #F3B81D  50%, #FCFFF3 50%)",
   verticalYellowSemiWhite: "linear-gradient(180deg, #F3B81D  50%, #FCFFF3 50%)",
   standartOpacity: "0.3",
-  cardShadow: "15px 15px 0px 0px #0F2934"
+  cardShadow: "15px 15px 0px 0px #0F2934",
+  reverseCardShdow: "-15px 15px 0px 0px #0F2934"
 }
 
 const GlobalStyle = createGlobalStyle`

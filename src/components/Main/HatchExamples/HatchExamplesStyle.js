@@ -6,13 +6,15 @@ const HatchExamplesStyle = styled.section`
   justify-content: center;
   padding-bottom: 7vh;
   margin-top: -2px;
-  div {
+  .examples-table {
+    min-height: 70vh;
     width: 90%;
     box-shadow: ${(props) => props.theme.cardShadow};
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     max-width: 2000px;
-    a {
+    background-color: ${(props) => props.theme.nightBlue};
+    .example {
       display: block;
       background-repeat: no-repeat;
       background-size: cover;
@@ -84,7 +86,8 @@ const HatchExamplesStyle = styled.section`
     @media (max-width: 900px) {
       grid-template-columns: 1fr 1fr;
       box-shadow: 10px 10px 0px 0px ${(props) => props.theme.nightBlue};
-      a {
+      min-height: 45vh;
+      .example {
         &:hover {
           &:nth-child(odd) {
             &::before {

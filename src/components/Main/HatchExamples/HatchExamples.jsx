@@ -22,10 +22,11 @@ const HatchExamples = (props) => {
 
   return (
     <HatchExamplesStyle>
-      <div>
+      <div className='examples-table'>
         {RandomizeIt(examples).map(({ brand, model }, i) => {
           return (
             <Link
+              className='example'
               onClick={handleClick}
               to={{
                 search: changeLinkSpace(brand) + "/" + changeLinkSpace(model),
