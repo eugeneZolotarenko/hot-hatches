@@ -29,7 +29,10 @@ const HatchExamples = (props) => {
               className='example'
               onClick={handleClick}
               to={{
-                search: changeLinkSpace(brand) + "/" + changeLinkSpace(model),
+                search:
+                  changeLinkSpace(brand, "~") +
+                  "/" +
+                  changeLinkSpace(model, "~"),
                 pathname: "/brand/model"
               }}
               key={i}

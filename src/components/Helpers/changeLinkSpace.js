@@ -1,5 +1,5 @@
-function changeLinkSpace(str) {
-  return str.split(/[ ,]+/).join("~")
+function changeLinkSpace(str, chr) {
+  return str.split(/[ ,]+/).join(chr)
 }
 
 export default changeLinkSpace

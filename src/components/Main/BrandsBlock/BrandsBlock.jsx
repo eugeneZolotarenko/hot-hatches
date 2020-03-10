@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import BrandsBlockStyle from "./BrandsBlockStyle"
 
 import GetFireBaseData from "../../Helpers/GetFireBaseData"
+import changeLinkSpace from "../../Helpers/changeLinkSpace"
 
 const BrandsBlock = (props) => {
   const [allBrands, setAllBrands] = useState([])
@@ -18,6 +19,25 @@ const BrandsBlock = (props) => {
   function handleClick(e) {
     const hatchBrand = e.target.dataset.brand
     props.setBrand(hatchBrand)
+    const country = getBrandCountry(hatchBrand)
+    props.setBrandCountry(country)
+  }
+
+  function getBrandCountry(hatchBrand) {
+    let country
+    allBrands.filter((obj) => {
+      if (hasValue(obj, "name", hatchBrand)) {
+        const hatchObj = hasValue(obj, "name", hatchBrand)
+        country = hatchObj.country
+      }
+    })
+    return country
+  }
+
+  function hasValue(obj, key, value) {
+    if (obj.hasOwnProperty(key) && obj[key] === value) {
+      return obj
+    }
   }
 
   return (
@@ -34,7 +54,10 @@ const BrandsBlock = (props) => {
               data-brand={name}
               onClick={handleClick}
               to={{
-                search: name,
+                search:
+                  changeLinkSpace(getBrandCountry(name), "~") +
+                  "/" +
+                  changeLinkSpace(name, "~"),
                 pathname: "/brand"
               }}
               key={i}>

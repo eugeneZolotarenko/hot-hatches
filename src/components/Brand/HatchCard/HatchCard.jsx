@@ -14,9 +14,9 @@ const HatchCard = (props) => {
             className='card-wrapper'
             to={{
               search:
-                changeLinkSpace(props.brand) +
+                changeLinkSpace(props.brand, "~") +
                 "/" +
-                changeLinkSpace(hatch.name),
+                changeLinkSpace(hatch.name, "~"),
               pathname: "/brand/model"
             }}>
             <div className='tech-part'>

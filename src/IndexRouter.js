@@ -13,6 +13,7 @@ const IndexRouter = () => {
 
   const [model, setModel] = useState("")
   const [brand, setBrand] = useState("")
+  const [brandCountry, setBrandCountry] = useState("")
 
   useEffect(() => {
     if (brand !== "") {
@@ -65,6 +66,8 @@ const IndexRouter = () => {
               setModel={setModel}
               model={model}
               brand={brand}
+              brandCountry={brandCountry}
+              setBrandCountry={setBrandCountry}
             />
           )}
         />
@@ -79,6 +82,8 @@ const IndexRouter = () => {
               model={model}
               brand={brand}
               brandData={data}
+              brandCountry={brandCountry}
+              setBrandCountry={setBrandCountry}
             />
           )}
         />

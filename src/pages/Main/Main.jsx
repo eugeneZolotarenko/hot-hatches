@@ -16,7 +16,11 @@ const Main = (props) => {
         model={props.model}
         brand={props.brand}
       />
-      <BrandsBlock setBrand={props.setBrand} brand={props.brand} />
+      <BrandsBlock
+        setBrand={props.setBrand}
+        brand={props.brand}
+        setBrandCountry={props.setBrandCountry}
+      />
     </MainStyle>
   )
 }

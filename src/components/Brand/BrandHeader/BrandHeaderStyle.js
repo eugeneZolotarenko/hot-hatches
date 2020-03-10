@@ -30,6 +30,13 @@ const BrandHeaderStyle = styled.section`
       line-height: 5rem;
     }
   }
+  .brand-country {
+    width: 65px;
+    height: 65px;
+    display: inline-block;
+    transform: translateY(40%);
+    margin-left: 30px;
+  }
   .first-letter {
     transform: translate(75%, 40%);
     position: relative;
