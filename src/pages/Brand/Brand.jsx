@@ -3,16 +3,15 @@ import React from "react"
 import BrandHeader from "../../components/Brand/BrandHeader"
 import HatchCard from "../../components/Brand/HatchCard"
 
-// import getFireBaseData from "../../components/Helpers/GetFireBaseData"
+import cutURL from "../../components/Helpers/cutURL"
 
 import BrandStyle from "./BrandStyle"
 
 const Brand = (props) => {
   if (props.brand === "") {
-    const brand = window.location.search.substring(1)
+    const [country, brand] = cutURL()
     props.setBrand(brand)
-    // console.log(getFireBaseData("Brands", props.setBrandCountry))
-    // getFireBaseData("Brands", props.setBrandCountry)
+    props.setBrandCountry(country)
   }
 
   return (
