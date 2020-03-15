@@ -13,6 +13,7 @@ const Main = (props) => {
       <HatchExamples
         setBrand={props.setBrand}
         setModel={props.setModel}
+        setModelID={props.setModelID}
         model={props.model}
         brand={props.brand}
       />

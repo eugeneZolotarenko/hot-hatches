@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 
 import { Link } from "react-router-dom"
 
@@ -11,6 +11,8 @@ import cutURL from "../../components/Helpers/cutURL"
 import BrandStyle from "./BrandStyle"
 
 const Brand = (props) => {
+  const [filteredData, setFilteredData] = useState()
+
   const searchPartURL = window.location.search
   if (searchPartURL && props.brand === "") {
     const [country, brand] = cutURL()
@@ -23,12 +25,14 @@ const Brand = (props) => {
       <BrandStyle>
         <section className='header-search'>
           <BrandHeader brand={props.brand} brandCountry={props.brandCountry} />
-          <SearchBar />
+          <SearchBar setFilteredData={setFilteredData} brandData={props.brandData} setModelId={props.setModelId} modelId={props.modelId} />
         </section>
         <HatchCard
           brandData={props.brandData}
+          filteredData={filteredData}
           setBrand={props.setBrand}
           setModel={props.setModel}
+          setModelID={props.setModelID}
           brand={props.brand}
           brandCountry={props.brandCountry}
           model={props.model}

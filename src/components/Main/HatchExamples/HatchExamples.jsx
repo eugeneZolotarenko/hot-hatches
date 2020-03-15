@@ -15,15 +15,14 @@ const HatchExamples = (props) => {
     GetFireBaseData(collection, setExamples)
   }, [])
 
-  function handleClick(e) {
-    const hatchBrand = e.target.dataset.brand
-    props.setBrand(hatchBrand)
-  }
-
   return (
     <HatchExamplesStyle>
       <div className='examples-table'>
-        {RandomizeIt(examples).map(({ brand, model, country }, i) => {
+        {RandomizeIt(examples).map(({ brand, model, country, id }, i) => {
+          function handleClick() {
+            props.setBrand(brand)
+            props.setModelID(id)
+          }
           return (
             <Link
               className='example'

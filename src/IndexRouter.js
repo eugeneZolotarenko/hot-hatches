@@ -11,6 +11,7 @@ const IndexRouter = () => {
   const [data, setData] = useState([])
   const [modelData, setModelData] = useState()
 
+  const [modelID, setModelID] = useState("")
   const [model, setModel] = useState("")
   const [brand, setBrand] = useState("")
   const [brandCountry, setBrandCountry] = useState("")
@@ -26,8 +27,8 @@ const IndexRouter = () => {
   }
 
   useEffect(() => {
-    if (data.length > 0 && model !== "") {
-      function getHatchData(value, key = "name") {
+    if (data.length > 0 && modelID !== "") {
+      function getHatchData(value, key = "id") {
         data.filter((obj) => {
           if (hasValue(obj, key, value)) {
             setModelData(obj)
@@ -36,9 +37,9 @@ const IndexRouter = () => {
           }
         })
       }
-      getHatchData(model)
+      getHatchData(modelID)
     }
-  }, [data, model])
+  }, [data, modelID])
 
   useEffect(() => {
     if (brand !== "" && data.length !== 0) {
@@ -64,10 +65,11 @@ const IndexRouter = () => {
               {...props}
               setBrand={setBrand}
               setModel={setModel}
+              setModelID={setModelID}
+              setBrandCountry={setBrandCountry}
               model={model}
               brand={brand}
               brandCountry={brandCountry}
-              setBrandCountry={setBrandCountry}
             />
           )}
         />
@@ -80,6 +82,7 @@ const IndexRouter = () => {
               setBrand={setBrand}
               setModel={setModel}
               model={model}
+              setModelID={setModelID}
               brand={brand}
               brandData={data}
               brandCountry={brandCountry}
