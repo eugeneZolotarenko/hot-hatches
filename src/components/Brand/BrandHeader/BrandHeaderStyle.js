@@ -36,6 +36,10 @@ const BrandHeaderStyle = styled.section`
     display: inline-block;
     transform: translateY(40%);
     margin-left: 30px;
+    @media (max-width: 1200px) {
+      width: 45px;
+      height: 45px;
+    }
   }
   .first-letter {
     transform: translate(75%, 40%);

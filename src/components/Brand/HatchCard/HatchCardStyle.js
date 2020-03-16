@@ -27,6 +27,9 @@ const HatchCardStyle = styled.section`
         li {
           padding-top: 10px;
           font-size: 2.2rem;
+          @media (max-width: 1200px) {
+            font-size: 2rem;
+          }
         }
       }
       .hatch-name {
@@ -36,6 +39,9 @@ const HatchCardStyle = styled.section`
         color: ${(props) => props.theme.nightBlue};
         transform: translate(-40%, 40%);
         width: fit-content;
+        @media (max-width: 1200px) {
+          font-size: 3rem;
+        }
       }
     }
     .img-part {
@@ -58,6 +64,9 @@ const HatchCardStyle = styled.section`
       .img-part {
         box-shadow: ${(props) => props.theme.reverseCardShdow};
       }
+    }
+    @media (max-width: 1200px) {
+      margin: 8% 0;
     }
   }
 `

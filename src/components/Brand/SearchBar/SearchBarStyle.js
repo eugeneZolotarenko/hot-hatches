@@ -21,6 +21,10 @@ const SearchBarStyle = styled.section`
       font-size: 3rem;
       padding: 0 5%;
       color: ${(props) => props.theme.orange};
+      @media (max-width: 1200px) {
+        font-size: 2.2rem;
+        min-width: 200px;
+      }
     }
     .form-submit {
       width: fit-content;
@@ -31,6 +35,9 @@ const SearchBarStyle = styled.section`
       border: none;
       color: ${(props) => props.theme.nightBlue};
       padding: 0;
+      @media (max-width: 1200px) {
+        font-size: 2.2rem;
+      }
     }
     &::before {
       content: "";
@@ -40,6 +47,8 @@ const SearchBarStyle = styled.section`
       bottom: 3px;
       right: 0;
       background-color: ${(props) => props.theme.nightBlue};
+    }
+    @media (max-width: 800px) {
     }
   }
   &::before {
