@@ -7,6 +7,9 @@ const BrandStyle = styled.section`
   .header-search {
     display: flex;
     width: 100%;
+    @media (max-width: 850px) {
+      flex-direction: column;
+    }
   }
 `
 

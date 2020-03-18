@@ -30,7 +30,13 @@ const HatchCardStyle = styled.section`
           @media (max-width: 1200px) {
             font-size: 2rem;
           }
+          @media (max-width: 850px) {
+            font-size: 1.8rem;
+          }
         }
+        @media (max-width: 1200px) {
+          padding: 7% 20px 7% 20px;
+      }
       }
       .hatch-name {
         font-weight: 600;
@@ -42,6 +48,12 @@ const HatchCardStyle = styled.section`
         @media (max-width: 1200px) {
           font-size: 3rem;
         }
+        @media (max-width: 850px) {
+          transform: translate(-20%, 30%);
+        }
+      }
+      @media (max-width: 850px) {
+        width: 90%;
       }
     }
     .img-part {
@@ -52,6 +64,11 @@ const HatchCardStyle = styled.section`
       background-color: ${(props) => props.theme.nightBlue};
       margin: 0;
       box-shadow: ${(props) => props.theme.cardShadow};
+      @media (max-width: 850px) {
+        width: 90%;
+        height: 25vh;
+        box-shadow: 10px 10px 0px 0px #0F2934;
+      }
     }
     &:nth-child(even) {
       flex-direction: row-reverse;
@@ -59,14 +76,26 @@ const HatchCardStyle = styled.section`
         .hatch-name {
           align-self: flex-end;
           transform: translate(20%, 40%);
+          @media (max-width: 850px) {
+            transform: translate(5%, 35%);
+        }
         }
       }
       .img-part {
         box-shadow: ${(props) => props.theme.reverseCardShdow};
+        @media (max-width: 850px) {
+         box-shadow: -10px 10px 0px 0px #0F2934;
+        }
+      }
+      @media (max-width: 850px) {
+      flex-direction: column;
       }
     }
     @media (max-width: 1200px) {
       margin: 8% 0;
+    }
+    @media (max-width: 850px) {
+      flex-direction: column;
     }
   }
 `

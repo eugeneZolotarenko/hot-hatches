@@ -25,6 +25,10 @@ const SearchBarStyle = styled.section`
         font-size: 2.2rem;
         min-width: 200px;
       }
+      @media (max-width: 600px) {
+        min-width: 0px;
+        width: 80%
+      }
     }
     .form-submit {
       width: fit-content;
@@ -59,6 +63,10 @@ const SearchBarStyle = styled.section`
     position: absolute;
     top: 0;
     right: 0;
+  }
+  @media (max-width: 850px) {
+    margin-top: 10vh;
+    padding-left: 10%;
   }
 `
 

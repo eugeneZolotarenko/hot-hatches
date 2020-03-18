@@ -45,6 +45,10 @@ const BrandHeaderStyle = styled.section`
     transform: translate(75%, 40%);
     position: relative;
   }
+  @media (max-width: 850px) {
+    padding-right: 0;
+    height: 10vh;
+  }
 `
 
 export default BrandHeaderStyle
