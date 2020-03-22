@@ -99,8 +99,11 @@ const IndexRouter = () => {
               setBrand={setBrand}
               setModel={setModel}
               model={model}
+              modelData={modelData}
               brand={brand}
               brandData={data}
+              brandCountry={brandCountry}
+              setBrandCountry={setBrandCountry}
             />
           )}
         />

@@ -25,7 +25,12 @@ const Brand = (props) => {
       <BrandStyle>
         <section className='header-search'>
           <BrandHeader brand={props.brand} brandCountry={props.brandCountry} />
-          <SearchBar setFilteredData={setFilteredData} brandData={props.brandData} setModelId={props.setModelId} modelId={props.modelId} />
+          <SearchBar
+            setFilteredData={setFilteredData}
+            brandData={props.brandData}
+            setModelId={props.setModelId}
+            modelId={props.modelId}
+          />
         </section>
         <HatchCard
           brandData={props.brandData}

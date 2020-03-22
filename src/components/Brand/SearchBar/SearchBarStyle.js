@@ -55,7 +55,7 @@ const SearchBarStyle = styled.section`
     @media (max-width: 800px) {
     }
   }
-  &::before {
+  /* &::before {
     content: "";
     background: ${(props) => props.theme.nightBlue};
     width: 51vw;
@@ -63,7 +63,7 @@ const SearchBarStyle = styled.section`
     position: absolute;
     top: 0;
     right: 0;
-  }
+  } */
   @media (max-width: 850px) {
     margin-top: 10vh;
     padding-left: 10%;

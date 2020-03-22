@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const BrandHeaderStyle = styled.section`
+const HeaderStyle = styled.section`
   width: 49%;
   height: 15vh;
   background: ${(props) => props.theme.yellowSemiWhite};
@@ -30,6 +30,9 @@ const BrandHeaderStyle = styled.section`
       line-height: 5rem;
     }
   }
+  .model-header {
+    font-size: 5.2rem;
+  }
   .brand-country {
     width: 65px;
     height: 65px;
@@ -51,4 +54,4 @@ const BrandHeaderStyle = styled.section`
   }
 `
 
-export default BrandHeaderStyle
+export default HeaderStyle

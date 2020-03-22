@@ -1,7 +1,7 @@
 import React from "react"
 
-import BrandHeaderStyle from "./BrandHeaderStyle"
-import changeLinkSpace from "../../Helpers/changeLinkSpace"
+import HeaderStyle from "../../sharedStyles/HeaderStyle"
+import changeLinkSpace from "../Helpers/changeLinkSpace"
 
 const BrandHeader = ({ brand, brandCountry }) => {
   const countryFlagLink = `assets/flags/${changeLinkSpace(
@@ -9,14 +9,14 @@ const BrandHeader = ({ brand, brandCountry }) => {
     "-"
   )}.svg`
   return (
-    <BrandHeaderStyle>
+    <HeaderStyle>
       <span className='first-letter'>{brand.charAt(0)}</span>
       <h2>{brand}</h2>
       <img
         className='brand-country'
         src={countryFlagLink}
         alt={brandCountry}></img>
-    </BrandHeaderStyle>
+    </HeaderStyle>
   )
 }
 

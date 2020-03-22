@@ -68,16 +68,6 @@ const MainHeaderStyle = styled.section`
     }
   }
 
-  &::before {
-    content: "";
-    background: ${(props) => props.theme.nightBlue};
-    width: 51vw;
-    height: 11px;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-
   @media (max-width: 600px) {
     flex-direction: column-reverse;
     padding-top: 4vh;

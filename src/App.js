@@ -33,6 +33,16 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.8rem;
     background: #FCFFF3;
     max-width: 100vw;
+    position: relative;
+    &::before {
+      content: "";
+      background: ${(props) => props.theme.nightBlue};
+      width: 51vw;
+      height: 11px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   };
   a{
     text-decoration: none;
