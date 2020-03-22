@@ -7,14 +7,15 @@ import changeLinkSpace from "../../Helpers/changeLinkSpace"
 const HatchCard = (props) => {
   // console.log(props.filteredData.length !== 0)
   // if (props.filteredData) {
-    return (
-      <HatchCardStyle>
-        {(props.filteredData ? props.filteredData : props.brandData).map((hatch) => {
+  return (
+    <HatchCardStyle>
+      {(props.filteredData ? props.filteredData : props.brandData).map(
+        (hatch) => {
           return (
             <Link
               key={hatch.id}
               className='card-wrapper'
-              onClick={ () => props.setModelID(hatch.id) }
+              onClick={() => props.setModelID(hatch.id)}
               to={{
                 search:
                   changeLinkSpace(props.brandCountry, "~") +
@@ -27,19 +28,19 @@ const HatchCard = (props) => {
               <div className='tech-part'>
                 <ul className='tech-info'>
                   <li>
-                    Max. Speed: <strong>240</strong> km/h
+                    Power: <strong>{hatch.power}</strong>
                   </li>
                   <li>
-                    0-100 km/h: <strong>5.5</strong> s
+                    Torque: <strong>{hatch.torque}</strong>
                   </li>
                   <li>
-                    0-160 km/h: <strong>12.5</strong> s
+                    0-100 km/h: <strong>{hatch.zero100}</strong>
                   </li>
                   <li>
-                    100-0 km/h: <strong>8.5</strong> s
+                    1/4 mile: <strong>{hatch.quarterMile}</strong>
                   </li>
                   <li>
-                    Nurburgring: <strong>7:47.19</strong> m
+                    Nurburgring: <strong>{hatch.nurburgring}</strong>
                   </li>
                 </ul>
                 <h3 className='hatch-name'>{hatch.name}</h3>
@@ -51,9 +52,10 @@ const HatchCard = (props) => {
                 }}></figure>
             </Link>
           )
-        })}
-      </HatchCardStyle>
-    )
+        }
+      )}
+    </HatchCardStyle>
+  )
   // } else {
   //   return (
   //     <HatchCardStyle>
