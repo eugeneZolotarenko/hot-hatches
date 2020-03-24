@@ -100,6 +100,8 @@ const IndexRouter = () => {
               setModel={setModel}
               model={model}
               modelData={modelData}
+              setModelID={setModelID}
+              modelID={modelID}
               brand={brand}
               brandData={data}
               brandCountry={brandCountry}

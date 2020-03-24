@@ -9,6 +9,7 @@
     "country-emoji": "^1.5.0",
     "firebase": "^7.9.1",
     "history": "^4.10.1",
+    "js-cloudimage-360-view": "^2.3.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router": "^5.1.2",

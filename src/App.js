@@ -67,6 +67,19 @@ const GlobalStyle = createGlobalStyle`
         font-size: 10rem;
       }
     }
+  canvas {
+    flex: 1;
+    webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -ms-touch-action: none;
+    touch-action: pan-y;
+    image-rendering: -webkit-optimize-contrast;
+}
 `
 
 function App() {

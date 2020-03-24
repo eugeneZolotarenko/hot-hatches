@@ -4,7 +4,7 @@ const SearchBarStyle = styled.section`
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  width: 100%;
+  width: 50%;
   padding-right: 10%;
   form {
     height: 37px;
@@ -27,7 +27,7 @@ const SearchBarStyle = styled.section`
       }
       @media (max-width: 600px) {
         min-width: 0px;
-        width: 80%
+        width: 80%;
       }
     }
     .form-submit {
@@ -55,15 +55,6 @@ const SearchBarStyle = styled.section`
     @media (max-width: 800px) {
     }
   }
-  /* &::before {
-    content: "";
-    background: ${(props) => props.theme.nightBlue};
-    width: 51vw;
-    height: 11px;
-    position: absolute;
-    top: 0;
-    right: 0;
-  } */
   @media (max-width: 850px) {
     margin-top: 10vh;
     padding-left: 10%;

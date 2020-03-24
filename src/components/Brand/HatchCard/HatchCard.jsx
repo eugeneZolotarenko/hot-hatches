@@ -22,7 +22,9 @@ const HatchCard = (props) => {
                   "/" +
                   changeLinkSpace(props.brand, "~") +
                   "/" +
-                  changeLinkSpace(hatch.name, "~"),
+                  changeLinkSpace(hatch.name, "~") +
+                  "/" +
+                  hatch.id,
                 pathname: "/brand/model"
               }}>
               <div className='tech-part'>

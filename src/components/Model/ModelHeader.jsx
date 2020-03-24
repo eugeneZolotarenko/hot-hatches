@@ -10,7 +10,7 @@ const ModelHeader = ({ brand, modelData, brandCountry }) => {
   )}.svg`
   if (modelData) {
     return (
-      <HeaderStyle>
+      <HeaderStyle className='model-header-wrapper'>
         <span className='first-letter first-model-letter'>
           {brand.charAt(0)}
         </span>

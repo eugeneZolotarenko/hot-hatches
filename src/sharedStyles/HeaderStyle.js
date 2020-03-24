@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const HeaderStyle = styled.section`
   width: 49%;
-  height: 15vh;
+  height: 13vh;
   background: ${(props) => props.theme.yellowSemiWhite};
   display: flex;
   justify-content: center;
@@ -32,6 +32,13 @@ const HeaderStyle = styled.section`
   }
   .model-header {
     font-size: 5.2rem;
+    @media (max-width: 900px) {
+      font-size: 3.5rem;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 3rem;
+    }
   }
   .brand-country {
     width: 65px;
@@ -47,6 +54,9 @@ const HeaderStyle = styled.section`
   .first-letter {
     transform: translate(75%, 40%);
     position: relative;
+  }
+  .first-model-letter {
+    transform: translate(75%, 40%) scale(0.8);
   }
   @media (max-width: 850px) {
     padding-right: 0;
