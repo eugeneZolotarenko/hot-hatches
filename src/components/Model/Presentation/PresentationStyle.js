@@ -1,13 +1,14 @@
 import styled from "styled-components"
 
 const PresentationStyle = styled.section`
-  height: 50vh;
-  width: 100%;
-  /* display: flex;
+  width: fit-content;
+  display: flex;
   justify-content: flex-end;
+  box-shadow: ${(props) => props.theme.cardShadow};
+  margin: 10vh auto;
   canvas {
-    width: fit-content;
-  } */
+    cursor: grab;
+  }
 `
 
 export default PresentationStyle

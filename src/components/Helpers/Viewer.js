@@ -1,4 +1,5 @@
 // source: https://codesandbox.io/s/canvas-based-360deg-product-viewer-zhkmc
+// Customized by Euegene Zolotarenko
 
 import React, { Component } from "react"
 
@@ -14,10 +15,20 @@ class Viewer extends Component {
   }
 
   componentDidMount() {
-    // Resize the canvas to fit the container it's inside
     const canvas = this.canvas.current
-    canvas.width = canvas.clientWidth * 3
-    canvas.height = canvas.clientHeight * 3
+
+    function resizeCanvas(img) {
+      const proportionOfImg = img.width / img.height
+      const imgWidth = window.innerWidth * 0.7
+      canvas.width = imgWidth
+      canvas.height = imgWidth / proportionOfImg
+    }
+
+    window.onresize = function onResize() {
+      const img = this.loadedImages[0]
+      resizeCanvas(img)
+      this.drawImage(0)
+    }.bind(this)
 
     // Pre-load all product images and then add the event listeners to the canvas and draw the first product image.
     this.loadImages().then(() => {
@@ -27,6 +38,9 @@ class Viewer extends Component {
       canvas.addEventListener("touchmove", this.handleTouchMove, false)
       canvas.addEventListener("mouseup", this.handleMouseUp, false)
       canvas.addEventListener("touchend", this.handleMouseUp, false)
+
+      const img = this.loadedImages[0]
+      resizeCanvas(img)
 
       this.drawImage(0)
     })
