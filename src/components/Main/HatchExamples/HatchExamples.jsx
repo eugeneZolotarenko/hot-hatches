@@ -18,10 +18,10 @@ const HatchExamples = (props) => {
   return (
     <HatchExamplesStyle>
       <div className='examples-table'>
-        {RandomizeIt(examples).map(({ brand, model, country, id }, i) => {
+        {RandomizeIt(examples).map(({ brand, model, country, intID }, i) => {
           function handleClick() {
+            // props.setModelID(intID)
             props.setBrand(brand)
-            props.setModelID(id)
           }
           return (
             <Link
@@ -33,7 +33,9 @@ const HatchExamples = (props) => {
                   "/" +
                   changeLinkSpace(brand, "~") +
                   "/" +
-                  changeLinkSpace(model, "~"),
+                  changeLinkSpace(model, "~") +
+                  "/" +
+                  changeLinkSpace(intID, ""),
                 pathname: "/brand/model"
               }}
               key={i}

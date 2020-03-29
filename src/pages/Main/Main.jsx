@@ -18,6 +18,7 @@ const Main = (props) => {
         brand={props.brand}
       />
       <BrandsBlock
+        setData={props.setData}
         setBrand={props.setBrand}
         brand={props.brand}
         setBrandCountry={props.setBrandCountry}

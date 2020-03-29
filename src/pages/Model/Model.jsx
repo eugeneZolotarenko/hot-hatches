@@ -9,7 +9,8 @@ import cutURL from "../../components/Helpers/cutURL"
 
 const Model = (props) => {
   const searchPartURL = window.location.search
-  if (searchPartURL && props.brand === "") {
+  // && props.brand === ""
+  if (searchPartURL) {
     const [country, brand, model, id] = cutURL()
     props.setBrandCountry(country.split(/[~]+/).join(" "))
     props.setBrand(brand)
@@ -30,6 +31,7 @@ const Model = (props) => {
         model={props.model}
         brandCountry={props.brandCountry}
         modelData={props.modelData}
+        setModelData={props.setModelData}
       />
     </ModelStyle>
   )

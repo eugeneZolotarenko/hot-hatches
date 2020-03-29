@@ -17,10 +17,14 @@ const BrandsBlock = (props) => {
   const sortedBrands = allBrands.map((item) => item.name).sort()
 
   function handleClick(e) {
+    if (e.target.dataset.brand !== props.brand) {
+      props.setData([])
+    }
     const hatchBrand = e.target.dataset.brand
     props.setBrand(hatchBrand)
     const country = getBrandCountry(hatchBrand)
     props.setBrandCountry(country)
+    window.scrollTo(0, 0)
   }
 
   function getBrandCountry(hatchBrand) {
