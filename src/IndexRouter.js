@@ -76,7 +76,6 @@ const IndexRouter = () => {
     }
   }, [modelData])
 
-  // if (data.length > 0) {
   return (
     <Switch>
       <Router history={history}>
@@ -138,11 +137,5 @@ const IndexRouter = () => {
     </Switch>
   )
 }
-//   else {
-//    return (
-//       <p>Loading...</p>
-//    )
-//   }
-// }
 
 export default IndexRouter
