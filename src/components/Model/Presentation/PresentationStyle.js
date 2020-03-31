@@ -9,6 +9,25 @@ const PresentationStyle = styled.section`
   canvas {
     cursor: grab;
   }
+  .model-slider {
+    width: 67vw;
+    .awssld__bullets {
+      display: none;
+    }
+    .awssld__controls {
+      button {
+        span {
+          &::before,
+          &::after {
+            background-color: ${(props) => props.theme.yellow};
+          }
+        }
+      }
+    }
+    .awssld__bar {
+      background-color: ${(props) => props.theme.yellow};
+    }
+  }
 `
 
 export default PresentationStyle

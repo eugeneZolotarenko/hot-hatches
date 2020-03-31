@@ -3,8 +3,6 @@
 
 import React, { Component } from "react"
 
-import resizePresentation from "../Helpers/resizePresentation"
-
 class Viewer360 extends Component {
   constructor(props) {
     super(props)
@@ -19,19 +17,19 @@ class Viewer360 extends Component {
   componentDidMount() {
     const canvas = this.canvas.current
 
-    // function resizePresentation(img, scale) {
-    //   const proportionOfImg = img.width / img.height
-    //   const imgWidth = window.innerWidth * scale
-    //   const widthAndHeight = {
-    //     width: imgWidth,
-    //     height: imgWidth / proportionOfImg
-    //   }
-    //   return widthAndHeight
-    // }
+    function resizeViewer360(img, scale) {
+      const proportionOfImg = img.width / img.height
+      const imgWidth = window.innerWidth * scale
+      const widthAndHeight = {
+        width: imgWidth,
+        height: imgWidth / proportionOfImg
+      }
+      return widthAndHeight
+    }
 
     window.onresize = function onResize() {
       const img = this.loadedImages[0]
-      const { width, height } = resizePresentation(img, 0.7)
+      const { width, height } = resizeViewer360(img, 0.67)
       canvas.width = width
       canvas.height = height
       this.drawImage(0)
@@ -47,7 +45,7 @@ class Viewer360 extends Component {
       canvas.addEventListener("touchend", this.handleMouseUp, false)
 
       const img = this.loadedImages[0]
-      const { width, height } = resizePresentation(img, 0.7)
+      const { width, height } = resizeViewer360(img, 0.67)
       canvas.width = width
       canvas.height = height
 
