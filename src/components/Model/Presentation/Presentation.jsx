@@ -10,7 +10,8 @@ const Presentation = ({
   brand,
   view360Switch,
   gallerySwitch,
-  interiorSwitch
+  interiorSwitch,
+  setView360Switch
 }) => {
   // qImages - Quantity of images, it is array, which looks like [360 images, gallery, interior]
   const { qImages, name } = modelData
@@ -27,13 +28,17 @@ const Presentation = ({
   }
 
   if (qImages) {
+    console.log(view360Switch)
     if (qImages[0] > 0 && view360Switch) {
       return (
         <PresentationStyle>
-          <Viewer360 images={imagesToArray(0)} />
+          <Viewer360 view360Switch={view360Switch} images={imagesToArray(0)} />
         </PresentationStyle>
       )
-    } else if (qImages[1] > 0 && gallerySwitch) {
+    } else if (
+      qImages[1] > 0 &&
+      (gallerySwitch || view360Switch === undefined)
+    ) {
       return (
         <PresentationStyle>
           <Slider images={imagesToArray(1)} />
@@ -46,7 +51,7 @@ const Presentation = ({
         </PresentationStyle>
       )
     } else {
-      return <p>Loading...</p>
+      return null
     }
   } else {
     return <p>Loading...</p>

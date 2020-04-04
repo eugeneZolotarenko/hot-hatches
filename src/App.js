@@ -1,4 +1,5 @@
 import React from "react"
+import "remove-focus-outline"
 
 import { ThemeProvider, createGlobalStyle } from "styled-components"
 import IndexRouter from "./IndexRouter"

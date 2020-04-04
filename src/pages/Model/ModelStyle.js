@@ -5,7 +5,6 @@ const ModelStyle = styled.section`
     display: flex;
     width: fit-content;
     height: fit-content;
-    /* align-items: center; */
     justify-content: center;
     margin: 10vh auto;
   }

@@ -26,14 +26,16 @@ class Viewer360 extends Component {
       }
       return widthAndHeight
     }
-
-    window.onresize = function onResize() {
-      const img = this.loadedImages[0]
-      const { width, height } = resizeViewer360(img, 0.67)
-      canvas.width = width
-      canvas.height = height
-      this.drawImage(0)
-    }.bind(this)
+    // if (this.loadedImages.length > 0) {
+    //   window.onresize = function onResize() {
+    //     console.log(this.props.view360Switch)
+    //     const img = this.loadedImages[0]
+    //     const { width, height } = resizeViewer360(img, 0.67)
+    //     canvas.width = width
+    //     canvas.height = height
+    //     this.drawImage(0)
+    //   }.bind(this)
+    // }
 
     // Pre-load all product images and then add the event listeners to the canvas and draw the first product image.
     this.loadImages().then(() => {
@@ -48,8 +50,9 @@ class Viewer360 extends Component {
       const { width, height } = resizeViewer360(img, 0.67)
       canvas.width = width
       canvas.height = height
-
-      this.drawImage(0)
+      if (this.props.view360Switch) {
+        this.drawImage(0)
+      }
     })
   }
 

@@ -19,18 +19,59 @@ const SwitchesPresentation = (props) => {
     switchesToFalse()
     props.setInteriorSwitch(true)
   }
-  return (
-    <SwitchesPresentationStyle>
-      <button onClick={setView360Active} className='switch'>
-        360
-      </button>
-      <button onClick={setGalleryActive} className='switch'>
-        Gallery
-      </button>
-      <button onClick={setInteriorActive} className='switch'>
-        Interior
-      </button>
-    </SwitchesPresentationStyle>
-  )
+  if (
+    props.modelData &&
+    props.modelData.qImages &&
+    props.modelData.qImages[0] > 0
+  ) {
+    return (
+      <SwitchesPresentationStyle>
+        <button
+          onClick={setView360Active}
+          className={props.view360Switch ? "switch active" : "switch"}>
+          Overview
+        </button>
+        <button
+          onClick={setGalleryActive}
+          className={
+            props.gallerySwitch || props.view360Switch === undefined
+              ? "switch active"
+              : "switch"
+          }>
+          Gallery
+        </button>
+        <button
+          onClick={setInteriorActive}
+          className={props.interiorSwitch ? "switch active" : "switch"}>
+          Interior
+        </button>
+      </SwitchesPresentationStyle>
+    )
+  } else if (
+    props.modelData &&
+    props.modelData.qImages &&
+    props.modelData.qImages[0] === 0
+  ) {
+    return (
+      <SwitchesPresentationStyle>
+        <button
+          onClick={setGalleryActive}
+          className={
+            props.gallerySwitch || props.view360Switch === undefined
+              ? "switch active"
+              : "switch"
+          }>
+          Gallery
+        </button>
+        <button
+          onClick={setInteriorActive}
+          className={props.interiorSwitch ? "switch active" : "switch"}>
+          Interior
+        </button>
+      </SwitchesPresentationStyle>
+    )
+  } else {
+    return <p>Loading</p>
+  }
 }
 export default SwitchesPresentation

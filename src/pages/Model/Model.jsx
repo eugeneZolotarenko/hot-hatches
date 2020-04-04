@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
 import ModelStyle from "./ModelStyle"
 
@@ -9,7 +9,7 @@ import SwitchesPresentation from "../../components/Model/SwitchesPresentation"
 import cutURL from "../../components/Helpers/cutURL"
 
 const Model = (props) => {
-  const [view360Switch, setView360Switch] = useState(true)
+  const [view360Switch, setView360Switch] = useState()
   const [gallerySwitch, setGallerySwitch] = useState(false)
   const [interiorSwitch, setInteriorSwitch] = useState(false)
 
@@ -36,8 +36,13 @@ const Model = (props) => {
           setView360Switch={setView360Switch}
           setGallerySwitch={setGallerySwitch}
           setInteriorSwitch={setInteriorSwitch}
+          view360Switch={view360Switch}
+          gallerySwitch={gallerySwitch}
+          interiorSwitch={interiorSwitch}
+          modelData={props.modelData}
         />
         <Presentation
+          setGallerySwitch={setGallerySwitch}
           view360Switch={view360Switch}
           gallerySwitch={gallerySwitch}
           interiorSwitch={interiorSwitch}
