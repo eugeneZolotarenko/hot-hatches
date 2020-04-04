@@ -5,7 +5,13 @@ import Slider from "./Blocks/Slider"
 
 import PresentationStyle from "./PresentationStyle"
 
-const Presentation = ({ modelData, brand }) => {
+const Presentation = ({
+  modelData,
+  brand,
+  view360Switch,
+  gallerySwitch,
+  interiorSwitch
+}) => {
   // qImages - Quantity of images, it is array, which looks like [360 images, gallery, interior]
   const { qImages, name } = modelData
 
@@ -21,19 +27,19 @@ const Presentation = ({ modelData, brand }) => {
   }
 
   if (qImages) {
-    if (qImages[0] > 0) {
+    if (qImages[0] > 0 && view360Switch) {
       return (
         <PresentationStyle>
           <Viewer360 images={imagesToArray(0)} />
         </PresentationStyle>
       )
-    } else if (qImages[1] > 0) {
+    } else if (qImages[1] > 0 && gallerySwitch) {
       return (
         <PresentationStyle>
           <Slider images={imagesToArray(1)} />
         </PresentationStyle>
       )
-    } else if (qImages[2] > 0) {
+    } else if (qImages[2] > 0 && interiorSwitch) {
       return (
         <PresentationStyle>
           <Slider images={imagesToArray(2)} />

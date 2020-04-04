@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import AwesomeSlider from "react-awesome-slider"
 import AwesomeSliderStyles from "react-awesome-slider/src/styles"
 

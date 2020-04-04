@@ -5,7 +5,6 @@ const PresentationStyle = styled.section`
   display: flex;
   justify-content: flex-end;
   box-shadow: ${(props) => props.theme.cardShadow};
-  margin: 10vh auto;
   canvas {
     cursor: grab;
   }

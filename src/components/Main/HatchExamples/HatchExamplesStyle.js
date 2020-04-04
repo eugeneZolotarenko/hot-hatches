@@ -86,7 +86,7 @@ const HatchExamplesStyle = styled.section`
     @media (max-width: 900px) {
       grid-template-columns: 1fr 1fr;
       box-shadow: 10px 10px 0px 0px ${(props) => props.theme.nightBlue};
-      min-height: 45vh;
+      min-height: 0;
       .example {
         &:hover {
           &:nth-child(odd) {
