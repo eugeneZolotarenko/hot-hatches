@@ -63,6 +63,9 @@ const BrandsBlockStyle = styled.section`
       &:hover {
         background: linear-gradient(90deg, #f3b81d 95%, #fcfff3 5%);
       }
+      @media (max-width: 600px) {
+        margin: 10px;
+      }
     }
   }
   &::before {

@@ -7,6 +7,10 @@ const ModelStyle = styled.section`
     height: fit-content;
     justify-content: center;
     margin: 10vh auto;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
   }
 `
 

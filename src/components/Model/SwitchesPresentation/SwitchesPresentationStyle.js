@@ -23,15 +23,43 @@ const SwitchesPresentationStyle = styled.section`
       ${(props) => props.theme.semiWhite} var(--pos, 100%),
       ${(props) => props.theme.yellow} var(--pos, 100%)
     );
+
+    @media (max-width: 1050px) {
+      font-size: 20px;
+      margin-top: 0;
+      margin-right: 5%;
+      padding-bottom: 10px;
+      background-image: linear-gradient(
+        180deg,
+        ${(props) => props.theme.semiWhite} var(--pos, 100%),
+        ${(props) => props.theme.yellow} var(--pos, 100%)
+      );
+    }
+    @media (max-width: 370px) {
+      font-size: 16px;
+    }
   }
 
   .active {
     animation: pushYellow 0.4s ease-in-out forwards;
   }
 
+  @media (max-width: 600px) {
+    flex-direction: row;
+    justify-content: center;
+  }
+
   @keyframes pushYellow {
     to {
       --pos: 15%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    @keyframes pushYellow {
+      to {
+        --pos: 0%;
+      }
     }
   }
 `

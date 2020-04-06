@@ -13,6 +13,7 @@ const theme = {
   verticalYellowSemiWhite: "linear-gradient(180deg, #F3B81D  50%, #FCFFF3 50%)",
   standartOpacity: "0.3",
   cardShadow: "15px 15px 0px 0px #0F2934",
+  mobileCardShadow: "10px 10px 0px 0px #0F2934",
   reverseCardShdow: "-15px 15px 0px 0px #0F2934"
 }
 

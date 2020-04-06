@@ -14,18 +14,19 @@ class Viewer360 extends Component {
     this.animation = null
   }
 
+  resizeViewer360(img, scale) {
+    const proportionOfImg = img.width / img.height
+    const imgWidth = window.innerWidth * scale
+    const widthAndHeight = {
+      width: imgWidth,
+      height: imgWidth / proportionOfImg
+    }
+    return widthAndHeight
+  }
+
   componentDidMount() {
     const canvas = this.canvas.current
 
-    function resizeViewer360(img, scale) {
-      const proportionOfImg = img.width / img.height
-      const imgWidth = window.innerWidth * scale
-      const widthAndHeight = {
-        width: imgWidth,
-        height: imgWidth / proportionOfImg
-      }
-      return widthAndHeight
-    }
     // if (this.loadedImages.length > 0) {
     //   window.onresize = function onResize() {
     //     console.log(this.props.view360Switch)
@@ -47,7 +48,11 @@ class Viewer360 extends Component {
       canvas.addEventListener("touchend", this.handleMouseUp, false)
 
       const img = this.loadedImages[0]
-      const { width, height } = resizeViewer360(img, 0.67)
+      let scale = 0.67
+      if (window.innerWidth <= 600) {
+        scale = 0.85
+      }
+      const { width, height } = this.resizeViewer360(img, scale)
       canvas.width = width
       canvas.height = height
       if (this.props.view360Switch) {
@@ -99,7 +104,7 @@ class Viewer360 extends Component {
   drawLoadingBar(progress) {
     const canvas = this.canvas.current
     const context = canvas.getContext("2d")
-    const barWidth = Math.round(window.innerWidth / 5)
+    const barWidth = Math.round(window.innerWidth / 2)
     const barHeight = Math.round(barWidth / 10)
     const barPosX = (canvas.width - barWidth) / 2
     const barPosY = (canvas.height - barHeight) / 2

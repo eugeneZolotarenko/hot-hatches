@@ -58,6 +58,7 @@ const SearchBarStyle = styled.section`
   @media (max-width: 850px) {
     margin-top: 10vh;
     padding-left: 10%;
+    width: 100%;
   }
 `
 
