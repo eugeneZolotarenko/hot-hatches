@@ -14,7 +14,7 @@ const theme = {
   standartOpacity: "0.3",
   cardShadow: "15px 15px 0px 0px #0F2934",
   mobileCardShadow: "10px 10px 0px 0px #0F2934",
-  reverseCardShdow: "-15px 15px 0px 0px #0F2934"
+  reverseCardShdow: "-15px 15px 0px 0px #0F2934",
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -81,6 +81,10 @@ const GlobalStyle = createGlobalStyle`
     -ms-touch-action: none;
     touch-action: pan-y;
     image-rendering: -webkit-optimize-contrast;
+    min-width: 67vw;
+    @media (max-width: 600px) {
+      min-width: 85vw;
+    }
 }
 `
 

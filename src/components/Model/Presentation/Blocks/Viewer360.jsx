@@ -19,7 +19,7 @@ class Viewer360 extends Component {
     const imgWidth = window.innerWidth * scale
     const widthAndHeight = {
       width: imgWidth,
-      height: imgWidth / proportionOfImg
+      height: imgWidth / proportionOfImg,
     }
     return widthAndHeight
   }
@@ -104,7 +104,7 @@ class Viewer360 extends Component {
   drawLoadingBar(progress) {
     const canvas = this.canvas.current
     const context = canvas.getContext("2d")
-    const barWidth = Math.round(window.innerWidth / 2)
+    const barWidth = Math.round(window.innerWidth / 20)
     const barHeight = Math.round(barWidth / 10)
     const barPosX = (canvas.width - barWidth) / 2
     const barPosY = (canvas.height - barHeight) / 2

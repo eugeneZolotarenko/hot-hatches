@@ -5,6 +5,7 @@ import ModelStyle from "./ModelStyle"
 import ModelHeader from "../../components/Model/ModelHeader"
 import Presentation from "../../components/Model/Presentation"
 import SwitchesPresentation from "../../components/Model/SwitchesPresentation"
+import Specs from "../../components/Model/Specs"
 
 import cutURL from "../../components/Helpers/cutURL"
 
@@ -53,6 +54,7 @@ const Model = (props) => {
           setModelData={props.setModelData}
         />
       </section>
+      <Specs modelData={props.modelData} />
     </ModelStyle>
   )
 }
