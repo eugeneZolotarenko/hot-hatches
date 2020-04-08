@@ -6,7 +6,7 @@ const ModelStyle = styled.section`
     width: fit-content;
     height: fit-content;
     justify-content: center;
-    margin: 10vh auto;
+    margin: 10vh auto 5vh auto;
 
     @media (max-width: 600px) {
       flex-direction: column;

@@ -24,10 +24,12 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-size: 62.5%;
     min-width: 320px;
+    color: ${(props) => props.theme.nightBlue};
   };
   *, *:before, *:after{
     font-family: 'Montserrat';
     box-sizing: border-box;
+    color: ${(props) => props.theme.nightBlue};
   };
   body {
     padding: 0;

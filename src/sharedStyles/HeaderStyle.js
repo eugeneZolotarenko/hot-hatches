@@ -13,6 +13,7 @@ const HeaderStyle = styled.section`
     font-weight: normal;
     margin: 0;
     transform: translateY(40%);
+    color: ${(props) => props.theme.nightBlue};
     @media (max-width: 1400px) {
       font-size: 5.3rem;
       line-height: 8rem;
