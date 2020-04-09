@@ -4,7 +4,7 @@ CSS.registerProperty({
   name: "--pos",
   syntax: "<percentage>",
   initialValue: "100%",
-  inherits: true
+  inherits: true,
 })
 
 const SwitchesPresentationStyle = styled.section`
@@ -26,6 +26,9 @@ const SwitchesPresentationStyle = styled.section`
 
     @media (max-width: 1050px) {
       font-size: 20px;
+    }
+
+    @media (max-width: 600px) {
       margin-top: 0;
       margin-right: 5%;
       padding-bottom: 10px;

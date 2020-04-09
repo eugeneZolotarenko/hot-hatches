@@ -28,6 +28,13 @@ const SpecsStyle = styled.section`
         left: -45%;
         transform: scale(0.8);
       }
+      @media (max-width: 600px) {
+        font-size: 3.2rem;
+      }
+    }
+    @media (max-width: 1050px) {
+      max-width: 25%;
+      min-width: 25%;
     }
   }
 
@@ -48,6 +55,9 @@ const SpecsStyle = styled.section`
         }
         @media (max-width: 1100px) {
           width: fit-content;
+        }
+        @media (max-width: 600px) {
+          font-size: 1.8rem;
         }
       }
       @media (max-width: 1450px) {
@@ -82,6 +92,10 @@ const SpecsStyle = styled.section`
       max-width: 50%;
       align-self: flex-end;
       height: fit-content;
+      @media (max-width: 600px) {
+        min-width: 65%;
+        max-width: 65%;
+      }
     }
   }
 
@@ -89,14 +103,20 @@ const SpecsStyle = styled.section`
     width: 35%;
     height: 250px;
     background-color: ${(props) => props.theme.yellow};
-    /* .specs-wrapper {
-      align-self: flex-end;
-    } */
+    .specs-wrapper {
+      @media (max-width: 600px) {
+        margin-left: auto;
+      }
+    }
 
     @media (max-width: 1100px) {
       width: 65%;
       align-self: flex-start;
       justify-content: flex-end;
+    }
+    @media (max-width: 600px) {
+      width: 85%;
+      height: 200px;
     }
   }
 

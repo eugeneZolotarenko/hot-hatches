@@ -88,6 +88,18 @@ const GlobalStyle = createGlobalStyle`
       min-width: 85vw;
     }
 }
+
+  .model-header-wrapper {
+    height: 10vh;
+    @media(max-width: 1400px) {
+      width: 100%;
+    }
+    h2 {
+      @media (max-width: 600px) {
+        width: fit-content;
+      }
+    }
+  }
 `
 
 function App() {
