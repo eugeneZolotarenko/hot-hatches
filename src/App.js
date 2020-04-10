@@ -69,6 +69,8 @@ const GlobalStyle = createGlobalStyle`
 
       @media (max-width: 600px) {
         font-size: 10rem;
+        top: 0;
+        left: 0;
       }
     }
   canvas {

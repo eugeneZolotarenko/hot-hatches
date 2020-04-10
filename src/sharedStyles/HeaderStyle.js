@@ -38,6 +38,7 @@ const HeaderStyle = styled.section`
 
     @media (max-width: 600px) {
       font-size: 3rem;
+      transform: translate(-18%, 40%);
     }
   }
   .brand-country {
@@ -50,6 +51,10 @@ const HeaderStyle = styled.section`
       width: 45px;
       height: 45px;
     }
+    @media (max-width: 600px) {
+      margin-left: 0;
+      margin-right: 20px;
+    }
   }
   .first-letter {
     transform: translate(75%, 40%);
@@ -57,6 +62,9 @@ const HeaderStyle = styled.section`
   }
   .first-model-letter {
     transform: translate(75%, 40%) scale(0.8);
+    @media (max-width: 600px) {
+      transform: translate(0, 40%) scale(0.8);
+    }
   }
   @media (max-width: 850px) {
     padding-right: 0;
