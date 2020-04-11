@@ -1,7 +1,7 @@
 import React from "react"
 import SwitchesPresentationStyle from "./SwitchesPresentationStyle"
 
-const SwitchesPresentation = (props) => {
+const SwitchesPresentation = props => {
   function switchesToFalse() {
     props.setView360Switch(false)
     props.setGallerySwitch(false)
@@ -71,7 +71,7 @@ const SwitchesPresentation = (props) => {
       </SwitchesPresentationStyle>
     )
   } else {
-    return <p>Loading</p>
+    return null
   }
 }
 export default SwitchesPresentation

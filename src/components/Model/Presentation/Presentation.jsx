@@ -1,4 +1,6 @@
 import React from "react"
+import { css } from "@emotion/core"
+import BounceLoader from "react-spinners/BounceLoader"
 
 import Viewer360 from "./Blocks/Viewer360"
 import SliderGallery from "./Blocks/SliderGallery"
@@ -6,13 +8,19 @@ import SliderInterior from "./Blocks/SliderInterior"
 
 import PresentationStyle from "./PresentationStyle"
 
+const override = css`
+  display: block;
+  margin: 20vh auto;
+  border-color: red;
+`
+
 const Presentation = ({
   modelData,
   brand,
   view360Switch,
   gallerySwitch,
   interiorSwitch,
-  setView360Switch,
+  setView360Switch
 }) => {
   // qImages - Quantity of images, it is array, which looks like [360 images, gallery, interior]
   const { qImages, name } = modelData
@@ -55,7 +63,16 @@ const Presentation = ({
       return null
     }
   } else {
-    return <p>Loading...</p>
+    return (
+      <div className='sweet-loading'>
+        <BounceLoader
+          css={override}
+          size={150}
+          color={"#F3B81D"}
+          loading={true}
+        />
+      </div>
+    )
   }
 }
 

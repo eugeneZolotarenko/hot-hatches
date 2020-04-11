@@ -4,9 +4,9 @@ const PresentationStyle = styled.section`
   width: fit-content;
   display: flex;
   justify-content: flex-end;
-  box-shadow: ${(props) => props.theme.cardShadow};
-  border-left: 6px solid ${(props) => props.theme.yellow};
-  border-top: 6px solid ${(props) => props.theme.yellow};
+  box-shadow: ${props => props.theme.cardShadow};
+  border-left: 6px solid ${props => props.theme.yellow};
+  border-top: 6px solid ${props => props.theme.yellow};
   canvas {
     cursor: grab;
   }
@@ -16,18 +16,21 @@ const PresentationStyle = styled.section`
     .awssld__bullets {
       display: none;
     }
+    .awssld__content {
+      background-color: ${props => props.theme.nightBlue};
+    }
     .awssld__controls {
       button {
         span {
           &::before,
           &::after {
-            background-color: ${(props) => props.theme.yellow};
+            background-color: ${props => props.theme.yellow};
           }
         }
       }
     }
     .awssld__bar {
-      background-color: ${(props) => props.theme.orange};
+      background-color: ${props => props.theme.orange};
     }
     @media (max-width: 600px) {
       width: 85vw;
@@ -35,7 +38,7 @@ const PresentationStyle = styled.section`
   }
 
   @media (max-width: 600px) {
-    box-shadow: ${(props) => props.theme.mobileCardShadow};
+    box-shadow: ${props => props.theme.mobileCardShadow};
   }
 `
 

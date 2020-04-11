@@ -14,7 +14,7 @@ const theme = {
   standartOpacity: "0.3",
   cardShadow: "15px 15px 0px 0px #0F2934",
   mobileCardShadow: "10px 10px 0px 0px #0F2934",
-  reverseCardShdow: "-15px 15px 0px 0px #0F2934",
+  reverseCardShdow: "-15px 15px 0px 0px #0F2934"
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -24,12 +24,12 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-size: 62.5%;
     min-width: 320px;
-    color: ${(props) => props.theme.nightBlue};
+    color: ${props => props.theme.nightBlue};
   };
   *, *:before, *:after{
     font-family: 'Montserrat';
     box-sizing: border-box;
-    color: ${(props) => props.theme.nightBlue};
+    color: ${props => props.theme.nightBlue};
   };
   body {
     padding: 0;
@@ -40,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     &::before {
       content: "";
-      background: ${(props) => props.theme.nightBlue};
+      background: ${props => props.theme.nightBlue};
       width: 51vw;
       height: 11px;
       position: absolute;
@@ -52,7 +52,7 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
   .first-letter {
-      color: ${(props) => props.theme.orange};
+      color: ${props => props.theme.orange};
       font-size: 16rem;
       font-weight: bold;
       position: absolute;
@@ -102,6 +102,16 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
+
+  #nprogress .bar {
+    height: 5px;
+    background: ${props => props.theme.orange};
+  }
+
+  #nprogress .spinner-icon {
+  border-top-color: ${props => props.theme.orange};
+  border-left-color: ${props => props.theme.orange};
+}
 `
 
 function App() {
