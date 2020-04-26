@@ -73,23 +73,6 @@ const GlobalStyle = createGlobalStyle`
         left: 0;
       }
     }
-  canvas {
-    flex: 1;
-    webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -ms-touch-action: none;
-    touch-action: pan-y;
-    image-rendering: -webkit-optimize-contrast;
-    min-width: 67vw;
-    @media (max-width: 600px) {
-      min-width: 85vw;
-    }
-}
 
   .model-header-wrapper {
     height: 10vh;
