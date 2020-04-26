@@ -10,6 +10,37 @@ const PresentationStyle = styled.section`
   canvas {
     cursor: grab;
   }
+  .image360-container {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+}
+
+.image360 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: none;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}
+
+.active {
+  display: block;
+  position: relative;
+  width: 67vw;
+
+  @media (max-width: 600px) {
+    width: 85vw;
+  }
+}
+
   .model-slider {
     width: 67vw;
     max-height: calc(67vw * 0.65);

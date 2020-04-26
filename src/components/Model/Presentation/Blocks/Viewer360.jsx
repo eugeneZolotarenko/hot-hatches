@@ -1,212 +1,94 @@
-// source: https://codesandbox.io/s/canvas-based-360deg-product-viewer-zhkmc
-// Customized by Euegene Zolotarenko
+import React from "react"
 
-import React, { Component } from "react"
+function View360({ images }) {
+  let firstPosition
+  let currentImage = 1
+  const lengthOfMoving = window.innerWidth * (images.length * 0.00032)
 
-class Viewer360 extends Component {
-  constructor(props) {
-    super(props)
-    this.canvas = React.createRef()
-    this.loadedImages = []
-    this.xInitial = null
-    this.xLast = null
-    this.currentImage = 0
-    this.animation = null
-  }
-
-  resizeViewer360(img, scale) {
-    const proportionOfImg = img.width / img.height
-    const imgWidth = window.innerWidth * scale
-    const widthAndHeight = {
-      width: imgWidth,
-      height: imgWidth / proportionOfImg,
+  console.log(lengthOfMoving)
+  function reverseCheckLength() {
+    if (currentImage <= 1) {
+      currentImage = images.length + 1
     }
-    return widthAndHeight
   }
 
-  componentDidMount() {
-    const canvas = this.canvas.current
-
-    // if (this.loadedImages.length > 0) {
-    //   window.onresize = function onResize() {
-    //     console.log(this.props.view360Switch)
-    //     const img = this.loadedImages[0]
-    //     const { width, height } = resizeViewer360(img, 0.67)
-    //     canvas.width = width
-    //     canvas.height = height
-    //     this.drawImage(0)
-    //   }.bind(this)
-    // }
-
-    // Pre-load all product images and then add the event listeners to the canvas and draw the first product image.
-    this.loadImages().then(() => {
-      canvas.addEventListener("mousedown", this.handleMouseDown, false)
-      canvas.addEventListener("touchstart", this.handleTouchStart, false)
-      canvas.addEventListener("mousemove", this.handleMouseMove, false)
-      canvas.addEventListener("touchmove", this.handleTouchMove, false)
-      canvas.addEventListener("mouseup", this.handleMouseUp, false)
-      canvas.addEventListener("touchend", this.handleMouseUp, false)
-
-      const img = this.loadedImages[0]
-      let scale = 0.67
-      if (window.innerWidth <= 600) {
-        scale = 0.85
-      }
-      const { width, height } = this.resizeViewer360(img, scale)
-      canvas.width = width
-      canvas.height = height
-      if (this.props.view360Switch) {
-        this.drawImage(0)
-      }
-    })
+  function checkLength() {
+    if (currentImage >= images.length) {
+      currentImage = 0
+    }
   }
 
-  componentWillUnmount() {
-    const canvas = this.canvas.current
-
-    // Remove all event listeners before the component gets removed from the page.
-    canvas.removeEventListener("mousedown", this.handleMouseDown, false)
-    canvas.removeEventListener("touchstart", this.handleTouchStart, false)
-    canvas.removeEventListener("mousemove", this.handleMouseMove, false)
-    canvas.removeEventListener("touchmove", this.handleTouchMove, false)
-    canvas.removeEventListener("mouseup", this.handleMouseUp, false)
-    canvas.removeEventListener("touchend", this.handleMouseUp, false)
+  function getFirstPosition(event) {
+    firstPosition = event.pageX
   }
 
-  loadImages() {
-    const { images } = this.props
+  function getFirstPositionMobile(event) {
+    firstPosition = event.touches[0].clientX
+  }
 
-    return new Promise((resolve) => {
-      images.forEach((image) => {
-        const img = new Image()
-        img.src = image
-        img.addEventListener(
-          "load",
-          () => {
-            // Add the loaded image to the array to be used later.
-            this.loadedImages.push(img)
-
-            // Resolve the promise, if all the images have been loaded. Otherwise, draw the loading bar to show the progress.
-            if (this.loadedImages.length === images.length) {
-              resolve()
-            } else {
-              this.drawLoadingBar(
-                (this.loadedImages.length * 100) / images.length
-              )
-            }
-          },
-          false
-        )
+  function classManipulator(allImages) {
+    if (allImages) {
+      allImages.forEach((image) => {
+        if (image.dataset.i == currentImage) {
+          image.classList.add("active")
+        } else {
+          image.classList.remove("active")
+        }
       })
-    })
+    } else {
+      console.error("Images are not exist")
+    }
   }
 
-  drawLoadingBar(progress) {
-    const canvas = this.canvas.current
-    const context = canvas.getContext("2d")
-    const barWidth = Math.round(window.innerWidth / 20)
-    const barHeight = Math.round(barWidth / 10)
-    const barPosX = (canvas.width - barWidth) / 2
-    const barPosY = (canvas.height - barHeight) / 2
+  function rotateObject(currentPisition, allImages) {
+    if (currentPisition <= firstPosition - lengthOfMoving) {
+      checkLength()
+      currentImage += 1
+      firstPosition = currentPisition
+      classManipulator(allImages)
+    } else if (currentPisition >= firstPosition + lengthOfMoving) {
+      reverseCheckLength()
+      currentImage -= 1
+      firstPosition = currentPisition
+      classManipulator(allImages)
+    }
+  }
 
-    // Draw the progress bar background.
-    context.fillStyle = "#fff"
-    context.clearRect(0, 0, canvas.width, canvas.height)
-    context.fillRect(barPosX, barPosY, barWidth, barHeight)
+  const activateViewer = (event) => {
+    const allImages = document.querySelectorAll(`.image360`)
+    if (event.buttons === 1) {
+      rotateObject(event.pageX, allImages)
+    }
+  }
 
-    // Draw the progress bar fill.
-    context.fillStyle = "#F3B81D"
-    const fillVal = Math.min(Math.max(progress / 100, 0), 1)
-    context.fillRect(
-      barPosX + 1,
-      barPosY + 1,
-      fillVal * (barWidth - 2),
-      barHeight - 2
+  const activateViewerMobile = (event) => {
+    const allImages = document.querySelectorAll(`.image360`)
+    rotateObject(event.touches[0].clientX, allImages)
+  }
+
+  if (images) {
+    return (
+      <div className='image360-container'>
+        {images.map((image, i) => {
+          return (
+            <img
+              className={`image360 ${i === 1 ? "active" : ""}`}
+              data-i={i + 1}
+              draggable='false'
+              key={i}
+              onMouseDown={getFirstPosition}
+              onTouchStart={getFirstPositionMobile}
+              onMouseMove={activateViewer}
+              onTouchMove={activateViewerMobile}
+              src={images[i]}
+            />
+          )
+        })}
+      </div>
     )
-  }
-
-  drawImage(frame) {
-    const canvas = this.canvas.current
-    const context = canvas.getContext("2d")
-
-    // Clear the canvas before starting to draw
-    context.clearRect(0, 0, canvas.width, canvas.height)
-
-    const newImage = this.loadedImages.filter((img) => {
-      return img.src.indexOf(this.props.images[frame]) > -1
-    })[0]
-
-    // Resize the image depending on the canvas's size.
-    const imageSizeScale = newImage.width / newImage.height
-    let newWidth = canvas.width
-    let newHeight = newWidth / imageSizeScale
-
-    if (newHeight > canvas.height) {
-      newHeight = canvas.height
-      newWidth = newHeight * imageSizeScale
-    }
-
-    // Draw the image on canvas
-    context.drawImage(newImage, 0, 0, newWidth, newHeight)
-    this.currentImage = frame
-  }
-
-  handleMouseDown = (event) => {
-    this.xInitial = event.pageX
-  }
-
-  handleTouchStart = (event) => {
-    this.xInitial = event.touches[0].pageX
-  }
-
-  handleMouseMove = (event) => {
-    if (this.xInitial !== null) {
-      const delta = event.pageX - (!this.xLast ? this.xInitial : this.xLast)
-      this.xLast = event.pageX
-
-      let startingFrame = this.currentImage
-      if (this.currentImage === this.loadedImages.length - 1) {
-        startingFrame = 0
-      } else if (this.currentImage === 0) {
-        startingFrame = this.loadedImages.length - 1
-      }
-
-      let moveFrame = startingFrame
-      if (delta > 0) {
-        moveFrame = startingFrame - 1
-      } else if (delta < 0) {
-        moveFrame = startingFrame + 1
-      }
-
-      this.newFrame = Math.min(
-        Math.max(moveFrame, 0),
-        this.loadedImages.length - 1
-      )
-
-      if (this.animation === null) {
-        this.animation = requestAnimationFrame(this.animationFrame)
-      }
-    }
-  }
-
-  animationFrame = () => {
-    this.drawImage(this.newFrame)
-
-    this.animation = requestAnimationFrame(this.animationFrame)
-  }
-
-  handleTouchMove = (event) => this.handleMouseMove(event.touches[0])
-
-  handleMouseUp = () => {
-    this.xInitial = null
-    this.xLast = null
-    this.animation && cancelAnimationFrame(this.animation)
-    this.animation = null
-  }
-
-  render() {
-    return <canvas ref={this.canvas} />
+  } else {
+    return <p>Loading...</p>
   }
 }
 
-export default Viewer360
+export default View360
