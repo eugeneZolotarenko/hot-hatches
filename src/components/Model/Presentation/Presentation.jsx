@@ -14,14 +14,13 @@ const override = css`
   border-color: red;
 `
 
-const Presentation = ({
+function Presentation({
   modelData,
   brand,
   view360Switch,
   gallerySwitch,
   interiorSwitch,
-  setView360Switch
-}) => {
+}) {
   // qImages - Quantity of images, it is array, which looks like [360 images, gallery, interior]
   const { qImages, name } = modelData
 
@@ -37,7 +36,6 @@ const Presentation = ({
   }
 
   if (qImages) {
-    console.log(view360Switch)
     if (qImages[0] > 0 && view360Switch) {
       return (
         <PresentationStyle>

@@ -5,7 +5,6 @@ function View360({ images }) {
   let currentImage = 1
   const lengthOfMoving = window.innerWidth * (images.length * 0.00032)
 
-  console.log(lengthOfMoving)
   function reverseCheckLength() {
     if (currentImage <= 1) {
       currentImage = images.length + 1
@@ -29,7 +28,7 @@ function View360({ images }) {
   function classManipulator(allImages) {
     if (allImages) {
       allImages.forEach((image) => {
-        if (image.dataset.i == currentImage) {
+        if (+image.dataset.i === currentImage) {
           image.classList.add("active")
         } else {
           image.classList.remove("active")
@@ -55,21 +54,21 @@ function View360({ images }) {
   }
 
   const activateViewer = (event) => {
-    const allImages = document.querySelectorAll(`.image360`)
+    const allImages = document.querySelectorAll(".image360")
     if (event.buttons === 1) {
       rotateObject(event.pageX, allImages)
     }
   }
 
   const activateViewerMobile = (event) => {
-    const allImages = document.querySelectorAll(`.image360`)
+    const allImages = document.querySelectorAll(".image360")
     rotateObject(event.touches[0].clientX, allImages)
   }
 
   if (images) {
     return (
       <div className='image360-container'>
-        {images.map((image, i) => {
+        {images.map((_image, i) => {
           return (
             <img
               className={`image360 ${i === 1 ? "active" : ""}`}
@@ -81,6 +80,7 @@ function View360({ images }) {
               onMouseMove={activateViewer}
               onTouchMove={activateViewerMobile}
               src={images[i]}
+              alt='image360'
             />
           )
         })}
